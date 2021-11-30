@@ -22,7 +22,7 @@ steps:
     echo "Most Recent Commits:"
     git log --pretty=oneline
     echo "********************************************************************"
-    git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+    git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
     git push --all
