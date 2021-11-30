@@ -15,6 +15,7 @@ steps:
     gh auth login
     gh auth status
     cd /home/vsts/work/1/s
+    ls -la
     gh repo sync https://github.com/benjawilson/PartsUnlimited --force
   displayName: 'Authenticate GitHub Credentials'
 
