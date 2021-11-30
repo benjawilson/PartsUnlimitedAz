@@ -16,7 +16,7 @@ steps:
     gh auth status
     cd /home/vsts/work/1/s
     echo "********************************************************************"
-    echo "Syncing the Following Files:"
+    echo "Pushing the Following Files:"
     ls -la
     echo "********************************************************************"
     echo "Most Recent Commits:"
@@ -24,8 +24,8 @@ steps:
     echo "********************************************************************"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
-    git push -f origin master
-  displayName: 'Authenticate GitHub Credentials'
+    git push -f origin main
+  displayName: 'Sync Repositiry with GitHub'
 
   
 
