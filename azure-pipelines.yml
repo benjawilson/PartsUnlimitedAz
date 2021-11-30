@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: |
+- bash: |
     export GITHUB_TOKEN=$(GH_VARIABLE)
     gh auth login
     gh auth status
