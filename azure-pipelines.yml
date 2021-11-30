@@ -22,6 +22,7 @@ steps:
     echo "Most Recent Commits:"
     git log --pretty=oneline
     echo "********************************************************************"
+    git config --global url.ssh://git@github.com/
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
     git push --all
