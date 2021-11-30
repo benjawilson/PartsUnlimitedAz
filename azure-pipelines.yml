@@ -12,5 +12,6 @@ pool:
 steps:
 - script: |
     export GITHUB_TOKEN=$(GH_VARIABLE)
-    gh auth login --with-token
+    gh auth login
+    gh auth status
   displayName: 'Authenticate GitHub Credentials'
