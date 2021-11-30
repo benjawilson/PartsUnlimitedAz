@@ -22,7 +22,9 @@ steps:
     echo "Most Recent Commits:"
     git log --pretty=oneline
     echo "********************************************************************"
-    gh repo sync https://github.com/benjawilson/PartsUnlimited --force
+    git remote set-url origin https://github.com/benjawilson/PartsUnlimited
+    git remote -v
+    git push -f origin master
   displayName: 'Authenticate GitHub Credentials'
 
   
