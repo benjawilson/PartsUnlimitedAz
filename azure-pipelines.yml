@@ -16,17 +16,9 @@ steps:
     gh auth status
   displayName: 'Authenticate GitHub Credentials'
 
-- bash: |
-    git clone https://github.com/benjawilson/PartsUnlimited
-    git status
-  displayName: 'Clone GitHub Repo'
   
 - bash: |
-    cp -f container:/home/vsts/work/1/s PartsUnlimited/
-  displayName: 'Force Copy Azure DevOps Files to GitHub Repo'
+    cd /home/vsts/work/1/s PartsUnlimited/
+    gh repo sync https://github.com/benjawilson/PartsUnlimited --force
+  displayName: 'Force Sync Azure DevOps Files to GitHub Repo'
 
-- bash: |
-    git commit -m ""
-    git --set-remote ...
-    git push origin master
-  displayName: 'Push commit to GitHub'
