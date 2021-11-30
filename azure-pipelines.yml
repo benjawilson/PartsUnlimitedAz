@@ -14,11 +14,10 @@ steps:
     export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
     gh auth status
+    cd /home/vsts/work/1/s
+    gh repo sync https://github.com/benjawilson/PartsUnlimited --force
   displayName: 'Authenticate GitHub Credentials'
 
   
-- bash: |
-    cd /home/vsts/work/1/s PartsUnlimited/
-    gh repo sync https://github.com/benjawilson/PartsUnlimited --force
-  displayName: 'Force Sync Azure DevOps Files to GitHub Repo'
+
 
