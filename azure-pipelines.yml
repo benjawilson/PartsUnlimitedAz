@@ -11,7 +11,7 @@ pool:
 
 steps:
 - bash: |
-    export GITHUB_TOKEN='$(GH_VARIABLE)'
+    export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
     gh auth status
   displayName: 'Authenticate GitHub Credentials'
