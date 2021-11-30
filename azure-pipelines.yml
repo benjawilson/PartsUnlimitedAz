@@ -15,7 +15,13 @@ steps:
     gh auth login
     gh auth status
     cd /home/vsts/work/1/s
+    echo "********************************************************************"
+    echo "Syncing the Following Files:"
     ls -la
+    echo "********************************************************************"
+    echo "Most Recent Commits:"
+    git log --pretty=oneline
+    echo "********************************************************************"
     gh repo sync https://github.com/benjawilson/PartsUnlimited --force
   displayName: 'Authenticate GitHub Credentials'
 
