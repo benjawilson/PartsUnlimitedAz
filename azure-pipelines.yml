@@ -27,11 +27,9 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |
-    cd 
-    pwd
-    echo $(rsa_private_key) > .ssh/id_rsa
+    echo '$(rsa_private_key)' > /home/vsts/.ssh/id_rsa
     echo "SSH Keys:"
-    ls .ssh 
+    ls /home/vsts/.ssh 
     git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
