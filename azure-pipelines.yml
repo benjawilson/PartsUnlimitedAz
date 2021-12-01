@@ -27,7 +27,7 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |
-    sudo apt-get install ssh
+    ls -al
     echo '$(rsa_private_key)' > /home/vsts/.ssh/id_rsa
     echo "SSH Keys:"
     ls /home/vsts/.ssh 
