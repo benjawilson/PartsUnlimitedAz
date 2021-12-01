@@ -27,7 +27,8 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |
-    
+    cd 
+    pwd
     echo $(rsa_private_key) > .ssh/id_rsa
     echo "SSH Keys:"
     ls .ssh 
