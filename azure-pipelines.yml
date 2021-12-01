@@ -14,6 +14,9 @@ steps:
     export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
     gh auth status
+  displayName: 'Authenticate GitHub CLI Credentials'
+    
+- bash: |
     echo "================================================================================"
     echo "Pushing the Following Files:"
     ls -la /home/vsts/work/1/s
@@ -21,7 +24,10 @@ steps:
     echo "Most Recent Commits:"
     git log --pretty=oneline
     echo "================================================================================"
-    echo $(rsa_private_key) > ~/.ssh/id_rsa
+  displayName: 'Print Git Logs'
+
+- bash: |
+    echo $(rsa_private_key) > .ssh/id_rsa
     git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
