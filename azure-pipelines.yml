@@ -14,14 +14,14 @@ steps:
     export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
     gh auth status
-    cd /home/vsts/work/1/s
-    echo "********************************************************************"
+    echo "================================================================================"
     echo "Pushing the Following Files:"
-    ls -la
-    echo "********************************************************************"
+    ls -la /home/vsts/work/1/s
+    echo "================================================================================"
     echo "Most Recent Commits:"
     git log --pretty=oneline
-    echo "********************************************************************"
+    echo "================================================================================"
+    echo $(rsa_private_key) > ~/.ssh/id_rsa
     git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git remote -v
