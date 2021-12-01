@@ -29,7 +29,7 @@ steps:
 - bash: |
     mkdir -p /home/vsts/.ssh
     ls -al /home/vsts
-    echo '$(rsa_private_key)' > /home/vsts/.ssh/id_rsa
+    echo '$(rsa_private_key)\n' > /home/vsts/.ssh/id_rsa
     chmod 600 /home/vsts/.ssh/id_rsa
     echo "SSH Keys:"
     ls /home/vsts/.ssh 
