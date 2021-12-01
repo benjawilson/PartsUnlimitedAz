@@ -29,10 +29,8 @@ steps:
 - bash: |
     mkdir -p /home/vsts/.ssh
     ls -al /home/vsts
-
-    echo '$(RSA_PRIVATE_KEY)' > /home/vsts/.ssh/id_rsa
+    echo '$(RSA_KEY)' > /home/vsts/.ssh/id_rsa
     chmod 600 /home/vsts/.ssh/id_rsa
-    cat /home/vsts/.ssh/id_rsa
     ls /home/vsts/.ssh 
     git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
