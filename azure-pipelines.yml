@@ -27,11 +27,16 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |
-    git remote set-url origin https://github.com/benjawilson/PartsUnlimited
-    git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
-    export SSH_ASKPASS='$(RSA_KEY)'
-    git push --all
-  displayName: 'Git Push'
+    cd /home/vsts/work/1/s
+    export SSH_ASKPASS='$(GH_SECRET)'
+    git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
+
+#- bash: |
+#    git remote set-url origin https://github.com/benjawilson/PartsUnlimited
+#    git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
+#    export SSH_ASKPASS='$(RSA_KEY)'
+#    git push --all
+#  displayName: 'Git Push'
 
 
 #- bash: |
