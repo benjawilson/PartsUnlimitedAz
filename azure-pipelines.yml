@@ -31,6 +31,7 @@ steps:
     export GH_URL=https://'$(GH_USERNAME)':'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz/
     sed -e "s|$AZURE_URL|$GH_URL|" .git/config > .git/config2
     mv .git/config2 .git/config
+    git config --global user.name "Ben"
     cat .git/config
     git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
 
