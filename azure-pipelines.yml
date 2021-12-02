@@ -33,7 +33,8 @@ steps:
     mv .git/config2 .git/config
     git config --global user.name "Ben"
     cat .git/config
-    git push --mirror https://'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz
+    git push --mirror
+#    git push --mirror https://'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz
 
 #- bash: |
 #    git remote set-url origin https://github.com/benjawilson/PartsUnlimited
