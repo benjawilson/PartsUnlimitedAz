@@ -28,7 +28,7 @@ steps:
 
 - bash: |   
 #    git config credential.helper "/bin/bash /home/vsts/work/1/s/credential-helper.sh"
-    git config --global url."https://${GH_SECRET}:@github.com/".insteadOf "https://github.com/"
+    git config --global url."https://'$(GH_SECRET)':@github.com/".insteadOf "https://github.com/"
     git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
 
 #- bash: |
