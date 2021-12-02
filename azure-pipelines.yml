@@ -29,7 +29,7 @@ steps:
 - bash: |   
     AZURE_URL=https://dKomplexDev@dev.azure.com/dKomplexDev/Parts%20Unlimited/_git/Parts%20Unlimited
     GH_URL=https://'$(GH_USERNAME)':'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz/
-    sed 's/$AZURE_URL/$GH_URL/' .git/config
+    sed 's/$AZURE_URL/$GH_URL/g' .git/config
     cat .git/config
     git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
 
