@@ -29,7 +29,7 @@ steps:
 - bash: |
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
     git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
-    export GIT_ASKPASS='$(GH_SECRET)'
+    export SSH_ASKPASS='$(RSA_KEY)'
     git push --all
   displayName: 'Git Push'
 
