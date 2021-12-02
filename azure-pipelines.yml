@@ -27,8 +27,7 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |   
-    export GH_SECRET='$(GH_SECRET)'
-    git config --global url."https://'$GH_SECRET:@github.com/".insteadOf "https://github.com/"
+    cat .git/config
     git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
 
 #- bash: |
