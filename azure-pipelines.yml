@@ -26,12 +26,7 @@ steps:
     echo "=============================================================================="
   displayName: 'Print Git Logs'
 
-- bash: |    
-    cd /home/vsts/work/1/s
-    touch /home/vsts/work/1/s/credential-helper.sh
-    "echo '#!/bin/bash' >> /home/vsts/work/1/s/credential-helper.sh"
-    echo username='$(GH_USERNAME)' >> credential-helper.sh
-    echo password='$(GH_SECRET)' >> credentail-helper.sh
+- bash: |   
     git config credential.helper "/bin/bash /home/vsts/work/1/s/credential-helper.sh"
     git push --mirror https://github.com/benjawilson/PartsUnlimitedAz
 
