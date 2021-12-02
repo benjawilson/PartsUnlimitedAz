@@ -28,9 +28,7 @@ steps:
 
 - bash: |
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
-    git config credential.https://github.com/benjawilson/PartsUnlimited benjawilson
     export GIT_ASKPASS='$(GH_SECRET)'
-    git remote -v
     git push --all
 
 
