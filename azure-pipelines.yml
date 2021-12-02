@@ -27,16 +27,24 @@ steps:
   displayName: 'Print Git Logs'
 
 - bash: |
-    mkdir -p /home/vsts/.ssh
-    ls -al /home/vsts
-    echo '$(RSA_KEY)' > /home/vsts/.ssh/id_rsa
-    chmod 600 /home/vsts/.ssh/id_rsa
-    ls /home/vsts/.ssh 
-    git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
     git remote set-url origin https://github.com/benjawilson/PartsUnlimited
+    git config credential.https://github.com/benjawilson/PartsUnlimited benjawilson
+    export GIT_ASKPASS='$(GH_SECRET)'
     git remote -v
     git push --all
-  displayName: 'Sync Repositiry with GitHub'
+
+
+#- bash: |
+#   mkdir -p /home/vsts/.ssh
+#    ls -al /home/vsts
+#    echo '$(RSA_KEY)' > /home/vsts/.ssh/id_rsa
+#    chmod 600 /home/vsts/.ssh/id_rsa
+#    ls /home/vsts/.ssh 
+#    git config --global --add url."benjawilson@github.com:".insteadOf "https://github.com/"
+#    git remote set-url origin https://github.com/benjawilson/PartsUnlimited
+#    git remote -v
+#    git push --all
+#  displayName: 'Sync Repositiry with GitHub'
 
   
 
