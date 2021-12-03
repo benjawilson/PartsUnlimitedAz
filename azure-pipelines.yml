@@ -33,7 +33,7 @@ steps:
     mv .git/config2 .git/config
     cat .git/config
     git checkout master
-    git push origin master
+    git push --force origin master
 
 
 #- bash: |
