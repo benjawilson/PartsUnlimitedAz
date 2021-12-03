@@ -32,6 +32,7 @@ steps:
     sed -e "s|$AZURE_URL|$GH_URL|" .git/config > .git/config2
     mv .git/config2 .git/config
     cat .git/config
+    git checkout master
     git push origin --all -f
   displayName: 'Push Master Branch to GitHub'
 
