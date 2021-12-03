@@ -33,7 +33,8 @@ steps:
     mv .git/config2 .git/config
     git config --global user.name "Ben"
     cat .git/config
-    git push --force origin main
+    git branch -m master
+    git push -u origin master
 
 
 #- bash: |
