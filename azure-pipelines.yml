@@ -34,6 +34,7 @@ steps:
     cat .git/config
     git checkout master
     git push --force origin master
+  displayName: 'Push Master Branch to GitHub'
 
 
 #- bash: |
