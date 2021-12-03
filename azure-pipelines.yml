@@ -33,7 +33,7 @@ steps:
     mv .git/config2 .git/config
     git config --global user.name "Ben"
     cat .git/config
-    git push --all --force
+    git push --mirror
 
 
 #- bash: |
