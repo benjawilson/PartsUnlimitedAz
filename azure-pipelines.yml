@@ -33,7 +33,7 @@ steps:
     cat .git/config
     git checkout master
     git push origin --all -f
-  displayName: 'Push Master Branch to GitHub'
+  displayName: 'Push to GitHub'
 
 
 #- bash: |
