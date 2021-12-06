@@ -29,8 +29,7 @@ steps:
 - bash: |   
     export AZURE_URL=https://dKomplexDev@dev.azure.com/dKomplexDev/Parts%20Unlimited/_git/Parts%20Unlimited
     export GH_URL=https://'$(GH_USERNAME)':'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz/
-    sed -e "s|$AZURE_URL|$GH_URL|" .git/config > .git/config2
-    mv .git/config2 .git/config
+    sed -ie "s|$AZURE_URL|$GH_URL|" .git/config 
     cat .git/config
     git checkout master
     git push origin --all -f
