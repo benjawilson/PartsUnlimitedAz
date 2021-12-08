@@ -19,7 +19,7 @@ steps:
     gh auth login
     gh auth status
     gh repo list
-    AZ_Repo=${{ variables.AzureRepo }}
+    AZ_Repo="${{ variables.AzureRepo }}"
     echo $AZ_Repo
     GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
     if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
