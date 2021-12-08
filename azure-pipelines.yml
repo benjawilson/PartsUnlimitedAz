@@ -21,7 +21,7 @@ steps:
     gh repo list
     AZ_Repo=${{ variables.AzureRepo }}
     GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
-    if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
+    if [[ " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
     echo "No matching repo"
     fi
   displayName: 'Authenticate GitHub CLI Credentials'
