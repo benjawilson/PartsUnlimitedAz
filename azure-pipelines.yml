@@ -21,8 +21,8 @@ steps:
     gh repo list
     AZ_Repo=${{ variables.AzureRepo }}
     GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
-    if [[ " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
-    echo "No matching repo"
+    if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
+    gh repo create [$AZ_Repo]
     fi
   displayName: 'Authenticate GitHub CLI Credentials'
     
