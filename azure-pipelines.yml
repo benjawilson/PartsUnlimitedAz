@@ -9,13 +9,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: current_repo
+  value: Build.Repository.Name
+
 steps:
 - bash: |
     export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
     gh auth status
     gh repo list
-    git rev-parse --show-toplevel
+    echo ${{ variables.current_repo }}
   displayName: 'Authenticate GitHub CLI Credentials'
     
 - bash: |
