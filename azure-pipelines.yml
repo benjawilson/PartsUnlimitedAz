@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- name: current_repo
+- name: AzureRepo
   value: $(Build.Repository.Name)
 
 steps:
@@ -19,7 +19,11 @@ steps:
     gh auth login
     gh auth status
     gh repo list
-    echo ${{ variables.current_repo }}
+    AZ_Repo=${{ variables.AzureRepo }}
+    GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
+    if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
+    echo "No matching repo"
+    fi
   displayName: 'Authenticate GitHub CLI Credentials'
     
 - bash: |
