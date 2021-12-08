@@ -11,7 +11,7 @@ pool:
 
 variables:
 - name: current_repo
-  value: Build.Repository.Name
+  value: $(Build.Repository.Name)
 
 steps:
 - bash: |
