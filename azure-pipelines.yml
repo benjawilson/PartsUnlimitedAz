@@ -25,7 +25,7 @@ steps:
     if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
     gh repo create $AZ_Repo --private
     fi
-  displayName: 'Create new GitHub repo if it doesn't exist'
+  displayName: 'Create new GitHub repo'
     
 - bash: |
     echo "=============================================================================="
