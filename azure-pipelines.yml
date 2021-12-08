@@ -15,6 +15,7 @@ steps:
     gh auth login
     gh auth status
     gh repo list
+    git rev-parse --show-toplevel
   displayName: 'Authenticate GitHub CLI Credentials'
     
 - bash: |
