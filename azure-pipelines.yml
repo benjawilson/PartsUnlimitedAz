@@ -19,11 +19,11 @@ steps:
     gh auth login
     gh auth status
     gh repo list
-    AZ_Repo="NewRepo"
+    AZ_Repo='${{ variables.AzureRepo }}'
     echo $AZ_Repo
-    gh repo create NewRepo --private
     GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
     if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
+    gh repo create $AZ_Repo --private
     fi
   displayName: 'Create new GitHub repo'
     
