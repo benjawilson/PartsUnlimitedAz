@@ -14,6 +14,11 @@ variables:
   value: $(Build.Repository.Name)
 
 steps:
+#Authenticate the GH CLI with PAT
+#List Repos in GitHub
+#Check to see if the Azure Repo name matches the name of any GitHub repos
+#GH_Repos is a Bash array of all GitHub repo names, the if block checks if AZ_Repo matches any of these values
+#If no matching repos are found, a new repo is created
 - bash: |
     export GITHUB_TOKEN='$(GH_SECRET)'
     gh auth login
@@ -27,6 +32,8 @@ steps:
     fi
   displayName: 'Create new GitHub repo'
     
+#Log the repo files in the Pipeline's docker container in the working directory
+#Log the most recent commits, one line each
 - bash: |
     echo "=============================================================================="
     echo "Pushing the Following Files:"
@@ -37,6 +44,8 @@ steps:
     echo "=============================================================================="
   displayName: 'Print Git Logs'
 
+#Change the Git origin in the .git/config file from Azure to GitHub
+#Force push all branches to GitHub
 - bash: |   
     export AZURE_URL=https://dKomplexDev@dev.azure.com/dKomplexDev/Parts%20Unlimited/_git/Parts%20Unlimited
     export GH_URL=https://'$(GH_USERNAME)':'$(GH_SECRET)'@github.com/benjawilson/PartsUnlimitedAz/
