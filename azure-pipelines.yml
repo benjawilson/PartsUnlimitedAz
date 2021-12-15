@@ -28,7 +28,10 @@ steps:
     echo $AZ_Repo
     GH_Repos=( $(gh repo list | awk '{print $1}' | awk -F'[/]' '{print $2}') )
     if [[ ! " ${GH_Repos[*]} " =~ " $AZ_Repo " ]]; then
-    gh repo create $AZ_Repo --private
+        gh repo create $AZ_Repo --private
+        echo "Replicating the $AZ_Repo Repo in GitHub."
+    else
+        echo "The $AZ_Repo Repo has already been replicated."
     fi
   displayName: 'Create new GitHub repo'
     
